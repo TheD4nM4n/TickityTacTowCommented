@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject var ticTacToeModel = TicTacToeModel()
     @State var gameOver : Bool = false
     
+    // places square at given index
     func buttonAction(_ index : Int) {
         _ = self.ticTacToeModel.makeMove(index: index, player: .home)
         self.gameOver = self.ticTacToeModel.gameOver.1
@@ -23,6 +24,8 @@ struct ContentView: View {
                 .foregroundColor(Color.black.opacity(0.7))
                 .padding(.bottom)
                 .font(.title2)
+            
+            // makes grid of squares
             ForEach(0 ..< ticTacToeModel.squares.count / 3, content: {
                 row in
                 HStack {

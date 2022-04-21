@@ -14,6 +14,7 @@ enum SquareStatus {
     case visitor
 }
 
+// square attributes
 class Square : ObservableObject {
     @Published var squareStatus : SquareStatus
     
@@ -22,6 +23,7 @@ class Square : ObservableObject {
     }
 }
 
+// visuals of each square
 struct SquareView : View {
     @ObservedObject var dataSource : Square
     var action: () -> Void
